@@ -1,0 +1,10 @@
+# Core LangChain dependencies
+langchain
+langchain-openai
+langchain-core
+langgraph
+# Environment management
+python-dotenv
+
+# Data validation and structured output
+pydantic
