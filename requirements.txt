@@ -5,6 +5,6 @@ langchain-core
 langgraph
 # Environment management
 python-dotenv
-
+pyyaml
 # Data validation and structured output
 pydantic
