@@ -328,6 +328,40 @@ def main():
     print(f"Total cost (USD): ${tracker.total_cost_usd:.6f}")
     print(f"Budget remaining: ${tracker.budget_usd - tracker.total_cost_usd:.6f}")
 
+# def test_circuit_breaker():
+#     """Test the circuit breaker by simulating failures."""
+#     print("\n=== TESTING CIRCUIT BREAKER ===\n")
+    
+#     # Create a test circuit breaker with low threshold
+#     test_breaker = CircuitBreaker(failure_threshold=3, reset_timeout=5)
+#     print(f"Initial state: {test_breaker.state}")
+    
+#     # Simulate failures to open the circuit
+#     print("\n--- Simulating failures to open circuit ---")
+#     for i in range(4):
+#         test_breaker.record_failure()
+#         print(f"After failure {i+1}: state={test_breaker.state}, failures={test_breaker.failures}")
+    
+#     # Test requests when circuit is open
+#     print("\n--- Testing requests when circuit is OPEN ---")
+#     for i in range(3):
+#         allowed = test_breaker.allow_request()
+#         print(f"Request {i+1} allowed? {allowed}")
+    
+#     # Wait for reset timeout
+#     print(f"\n--- Waiting {test_breaker.reset_timeout} seconds for timeout ---")
+#     time.sleep(test_breaker.reset_timeout + 1)
+    
+#     # Should be half-open now
+#     print(f"After timeout, state: {test_breaker.state}")
+#     print(f"Request allowed? {test_breaker.allow_request()}")
+    
+#     # Simulate success to close the circuit
+#     print("\n--- Simulating success to close circuit ---")
+#     test_breaker.record_success()
+#     print(f"After success, state: {test_breaker.state}")
+#     print(f"Request allowed? {test_breaker.allow_request()}")
 
 if __name__ == "__main__":
     main()
+    # test_circuit_breaker()
